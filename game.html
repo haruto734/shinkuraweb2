@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>水がある1日／ない1日</title>
+<style>
+body {
+  font-family: sans-serif;
+  background: #f5f7fa;
+  text-align: center;
+  padding: 40px;
+}
+
+.game-box {
+  background: white;
+  max-width: 500px;
+  margin: auto;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+button {
+  padding: 12px 20px;
+  margin: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.water {
+  background: #4da6ff;
+  color: white;
+}
+
+.nowater {
+  background: #ff6b6b;
+  color: white;
+}
+
+.result {
+  margin-top: 20px;
+  font-size: 16px;
+  line-height: 1.8;
+}
+</style>
+</head>
+
+<body>
+
+<div class="game-box">
+  <h2>水がある1日／ない1日</h2>
+  <p>あなたは今日、どんな環境で生活しますか？</p>
+
+  <button class="water" onclick="withWater()">水が家に届いている</button>
+  <button class="nowater" onclick="withoutWater()">水を汲みに行かないといけない</button>
+
+  <div id="result" class="result"></div>
+</div>
+
+<script>
+function withWater() {
+  document.getElementById("result").innerHTML = `
+  <strong>結果：水がある1日</strong><br>
+  ・朝すぐに水が使える<br>
+  ・学校に行けた<br>
+  ・体力に余裕がある<br><br>
+  水があることで、<br>
+  「学ぶ」「働く」「休む」<br>
+  という選択肢が当たり前に持てます。
+  `;
+}
+
+function withoutWater() {
+  document.getElementById("result").innerHTML = `
+  <strong>結果：水がない1日</strong><br>
+  ・朝から水を汲みに行く（2時間）<br>
+  ・疲れて学校に行けない<br>
+  ・体調を崩しやすい<br><br>
+  水がないだけで、<br>
+  1日のほとんどが奪われてしまいます。
+  `;
+}
+</script>
+
+</body>
+</html>
